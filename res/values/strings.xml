@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, DiabDiet!</string>
+    <string name="app_name">Diab Diet</string>
+    <string name="main_solve">Solve Problem</string>
+    <string name="main_edit">Edit Knowledge</string>
+    <string name="form_btn_next">Give me diet plan!</string>
+    <string name="form_intro_text">Dear user, please kindly fill this form to let us suggest you your best diet plan.</string>
+    <string name="form_header_bgcolor">#CECECE</string>
+    <string name="form_antro_header">Anthropometry Data</string>
+    <string name="form_antro_age_ask">Age</string>
+    <string name="form_antro_age_e">y.o.</string>
+    <string name="form_antro_bodyheight_ask">Height</string>
+    <string name="form_antro_bodyheight_e">cm</string>
+    <string name="form_antro_bodyweight_ask">Weight</string>
+    <string name="form_antro_bodyweight_e">kg</string>
+    <string name="form_lab_header">Laboratory Data</string>
+    <string name="form_lab_temp_ask">Temperature</string>
+    <string name="form_lab_temp_e">Celcius</string>
+    <string name="form_lab_HDL_ask">HDL</string>
+    <string name="form_lab_HDL_e">mg/cl</string>
+    <string name="form_lab_LDL_ask">LDL</string>
+    <string name="form_lab_LDL_e">mg/cl</string>
+    <string name="form_lab_chol_ask">Cholesterol</string>
+    <string name="form_lab_trig_ask">Triglyceride</string>
+    <string name="form_lab_uricacid_ask">Uric acid</string>
+    <string name="form_lab_systole_ask">Systole</string>
+    <string name="form_lab_diastole_ask">Diastole</string>
+</resources>

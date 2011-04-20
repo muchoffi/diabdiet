@@ -4,16 +4,25 @@
     <string name="app_name">Diab Diet</string>
     <string name="main_solve">Solve Problem</string>
     <string name="main_edit">Edit Knowledge</string>
+    
     <string name="form_btn_next">Give me diet plan!</string>
+    
     <string name="form_intro_text">Dear user, please kindly fill this form to let us suggest you your best diet plan.</string>
-    <string name="form_header_bgcolor">#CECECE</string>
+    
     <string name="form_antro_header">Anthropometry Data</string>
+    <string name="form_antro_gender_ask">Gender</string>
+    <string name="form_antro_gender_male">Male</string>
+    <string name="form_antro_gender_female">Female</string>
+    <string name="form_antro_preg_ask">Are you Pregnant?</string>
+    <string name="form_antro_preg_yes">Yes</string>
+    <string name="form_antro_preg_no">No</string>
     <string name="form_antro_age_ask">Age</string>
     <string name="form_antro_age_e">y.o.</string>
     <string name="form_antro_bodyheight_ask">Height</string>
     <string name="form_antro_bodyheight_e">cm</string>
     <string name="form_antro_bodyweight_ask">Weight</string>
     <string name="form_antro_bodyweight_e">kg</string>
+    
     <string name="form_lab_header">Laboratory Data</string>
     <string name="form_lab_temp_ask">Temperature</string>
     <string name="form_lab_temp_e">Celcius</string>
@@ -26,4 +35,13 @@
     <string name="form_lab_uricacid_ask">Uric acid</string>
     <string name="form_lab_systole_ask">Systole</string>
     <string name="form_lab_diastole_ask">Diastole</string>
+    
+    <string name="form_clinic_anam_header">Clinical And Anamnesa Record</string>
+    <string name="form_anam_swallow">I have a problem swallowing food</string>
+    <string name="form_clinic_standhunger">I can control my hunger in a diet</string>
+    <string name="form_clinic_bloodvein">I ever have problems with my blood veins</string>
+    <string name="form_clinic_fracture">I\'m currently experiencing fracture</string>
+    <string name="form_clinic_cellulitis">I have a cellulities disease</string>
+    <string name="form_clinic_wound">I\'m having wound</string>
+    <string name="form_clinic_diablong">How long have you had diabetes?</string>
 </resources>

@@ -42,19 +42,35 @@
 	       		</LinearLayout>
        		<TableRow>
 		      	<TextView android:text="@string/form_antro_age_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_ant_age" android:layout_width="fill_parent" android:layout_height="wrap_content" android:width="100dip" android:layout_marginLeft="20px" android:layout_marginRight="20px"/>
+	       		<EditText android:id="@+id/in_ant_age" android:layout_width="fill_parent" android:layout_height="wrap_content" android:width="100dip" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="integer"/>
 	       		<TextView android:text="@string/form_antro_age_e" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
        		</TableRow>
        		<TableRow>
 		      	<TextView android:text="@string/form_antro_bodyheight_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_ant_bodyheight" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px"/>
+	       		<EditText android:id="@+id/in_ant_bodyheight" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="decimal"/>
 	       		<TextView android:text="@string/form_antro_bodyheight_e" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
        		</TableRow>
        		<TableRow>
 		      	<TextView android:text="@string/form_antro_bodyweight_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_ant_bodyweight" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px"/>
+	       		<EditText android:id="@+id/in_ant_bodyweight" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="decimal"/>
 	       		<TextView android:text="@string/form_antro_bodyweight_e" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
        		</TableRow>
+	       	<LinearLayout
+	       		android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
+	       		<TextView android:text="@string/form_antro_gender_ask" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dip "/>
+	       		<RadioGroup android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+	       			<RadioButton android:id="@+id/form_antro_gender_male" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/form_antro_gender_male" android:layout_marginLeft="5dip" android:layout_marginRight="5dip" />
+	       			<RadioButton android:id="@+id/form_antro_gender_female" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/form_antro_gender_female" />
+	       		</RadioGroup>
+	       		</LinearLayout>
+	       	<LinearLayout
+	       		android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
+	       		<TextView android:text="@string/form_antro_preg_ask" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dip "/>
+	       		<RadioGroup android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+	       			<RadioButton android:id="@+id/form_antro_preg_yes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/form_antro_preg_yes" android:layout_marginLeft="5dip" android:layout_marginRight="5dip" />
+	       			<RadioButton android:id="@+id/form_antro_preg_no" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/form_antro_preg_no" />
+	       		</RadioGroup>
+	       		</LinearLayout>
      		<View android:layout_height="2dip" android:layout_width="fill_parent" android:background="#eeeeee" android:layout_marginTop="5dip"/>
        		
        		<!-- LABORATORY DATA -->
@@ -64,43 +80,64 @@
 	       		</LinearLayout>
        		<TableRow>
 		      	<TextView android:text="@string/form_lab_temp_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_lab_temp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px"/>
+	       		<EditText android:id="@+id/in_lab_temp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px"  android:inputType="number" android:numeric="decimal"/>
 	       		<TextView android:text="@string/form_lab_temp_e" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
        		</TableRow>
        		<TableRow>
 		      	<TextView android:text="@string/form_lab_HDL_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_lab_HDL" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px"/>
+	       		<EditText android:id="@+id/in_lab_HDL" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="decimal"/>
 	       		<TextView android:text="@string/form_lab_HDL_e" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
        		</TableRow>
        		<TableRow>
 		      	<TextView android:text="@string/form_lab_LDL_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_lab_LDL" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px"/>
+	       		<EditText android:id="@+id/in_lab_LDL" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="decimal"/>
 	       		<TextView android:text="@string/form_lab_LDL_e" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
        		</TableRow>
        		<TableRow>
 		      	<TextView android:text="@string/form_lab_chol_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_lab_chol" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px"/>
+	       		<EditText android:id="@+id/in_lab_chol" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="decimal"/>
        		</TableRow>
        		<TableRow>
 		      	<TextView android:text="@string/form_lab_trig_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_lab_trig" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px"/>
+	       		<EditText android:id="@+id/in_lab_trig" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="decimal"/>
        		</TableRow>
        		<TableRow>
 		      	<TextView android:text="@string/form_lab_uricacid_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_lab_uricacid" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px"/>
+	       		<EditText android:id="@+id/in_lab_uricacid" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="decimal"/>
        		</TableRow>
        		<TableRow>
 		      	<TextView android:text="@string/form_lab_systole_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_lab_systole" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px"/>
+	       		<EditText android:id="@+id/in_lab_systole" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="decimal"/>
        		</TableRow>
        		<TableRow>
 		      	<TextView android:text="@string/form_lab_diastole_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_lab_diastole" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px"/>
+	       		<EditText android:id="@+id/in_lab_diastole" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="decimal"/>
        		</TableRow>
      		<View android:layout_height="2dip" android:layout_width="fill_parent" android:background="#eeeeee" android:layout_marginTop="5dip"/>
      		
      	</TableLayout>
      	
+     	<!-- ANAMNESA AND CLINICAL RECORD -->
+       	<LinearLayout
+       		android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="#eeeeee" android:layout_marginBottom="5dip" android:layout_marginTop="2dip">
+       		<TextView android:text="@string/form_clinic_anam_header" android:textColor="#000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="5dip "/>
+       		</LinearLayout>       		
+       	<CheckBox android:id="@+id/form_anam_swallow" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/form_anam_swallow" />
+       	<CheckBox android:id="@+id/form_clinic_standhunger" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/form_clinic_standhunger" />
+       	<CheckBox android:id="@+id/form_clinic_bloodvein" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/form_clinic_bloodvein" />
+       	<CheckBox android:id="@+id/form_clinic_fracture" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/form_clinic_fracture" />
+       	<CheckBox android:id="@+id/form_clinic_cellulitis" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/form_clinic_cellulitis" />
+       	<CheckBox android:id="@+id/form_clinic_wound" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/form_clinic_wound" />
+       	<LinearLayout
+       		android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
+       		<TextView android:text="@string/form_clinic_diablong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dip "/>
+       		<RadioGroup android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+       			<RadioButton android:id="@+id/form_antro_preg_yes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/form_antro_preg_yes" android:layout_marginLeft="5dip" android:layout_marginRight="5dip" />
+       			<RadioButton android:id="@+id/form_antro_preg_no" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/form_antro_preg_no" />
+       		</RadioGroup>
+       		</LinearLayout>
+       	<View android:layout_height="2dip" android:layout_width="fill_parent" android:background="#eeeeee" android:layout_marginTop="5dip"/>
+       	
      	<Button android:id="@+id/form_next" android:text="@string/form_btn_next" android:layout_width="fill_parent" android:layout_height="wrap_content" />
         
      </LinearLayout>

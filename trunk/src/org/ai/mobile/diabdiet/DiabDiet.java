@@ -24,9 +24,19 @@ public class DiabDiet extends Activity {
 				Intent i = new Intent(DiabDiet.this, InputProblem.class);
 				startActivity(i);
 			}
-		};
-		
+		};		
 		main_solve.setOnClickListener(list);
+		
+		list = new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				//New intents
+				Intent i = new Intent(DiabDiet.this, EditKnowledge.class);
+				startActivity(i);
+			}
+		};
+		main_edit.setOnClickListener(list);
 
     }
 }

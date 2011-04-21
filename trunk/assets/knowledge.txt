@@ -1,0 +1,11 @@
+# status
++ kurus 0.0 1.3
++ normal 1.3 3.7	
++ gemuk 3.7 6.1	
++ overweight 6.1 9.9
+# kehamilan
++ hamil 300
++ menyusui 400
+# komplikasi
++ hipertensi 300 400
++ asam_urat 312 225

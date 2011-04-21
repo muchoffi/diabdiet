@@ -37,11 +37,13 @@
     <string name="form_lab_diastole_ask">Diastole</string>
     
     <string name="form_clinic_anam_header">Clinical And Anamnesa Record</string>
-    <string name="form_anam_swallow">I have a problem swallowing food</string>
+    <string name="form_anam_swallow">I have problem swallowing food</string>
     <string name="form_clinic_standhunger">I can control my hunger in a diet</string>
     <string name="form_clinic_bloodvein">I ever have problems with my blood veins</string>
-    <string name="form_clinic_fracture">I\'m currently experiencing fracture</string>
+    <string name="form_clinic_fracture">I\'m currently having fracture</string>
     <string name="form_clinic_cellulitis">I have a cellulities disease</string>
     <string name="form_clinic_wound">I\'m having wound</string>
     <string name="form_clinic_diablong">How long have you had diabetes?</string>
+    
+    <string name="editk_header">Dear</string>
 </resources>

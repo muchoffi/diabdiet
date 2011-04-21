@@ -33,7 +33,7 @@ public class FileOperation {
             in.close();
 
         } catch (IOException ex) {
-            Logger.getLogger(InputData.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FileOperation.class.getName()).log(Level.SEVERE, null, ex);
         }
         ListMenu listMenuHasil = new ListMenu();
         listMenuHasil = gson.fromJson(temp.toString(), ListMenu.class);
@@ -51,7 +51,7 @@ public class FileOperation {
             out.write(Stringgson.getBytes());
             out.close();
         } catch (IOException ex) {
-            Logger.getLogger(InputData.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FileOperation.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

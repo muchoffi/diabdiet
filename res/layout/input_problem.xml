@@ -47,12 +47,12 @@
        		</TableRow>
        		<TableRow>
 		      	<TextView android:text="@string/form_antro_bodyheight_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_ant_bodyheight" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="decimal"/>
+	       		<EditText android:id="@+id/in_ant_bodyheight" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="numberDecimal" android:numeric="decimal"/>
 	       		<TextView android:text="@string/form_antro_bodyheight_e" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
        		</TableRow>
        		<TableRow>
 		      	<TextView android:text="@string/form_antro_bodyweight_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_ant_bodyweight" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="decimal"/>
+	       		<EditText android:id="@+id/in_ant_bodyweight" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="numberDecimal" android:numeric="decimal"/>
 	       		<TextView android:text="@string/form_antro_bodyweight_e" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
        		</TableRow>
 	       	<LinearLayout
@@ -80,38 +80,38 @@
 	       		</LinearLayout>
        		<TableRow>
 		      	<TextView android:text="@string/form_lab_temp_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_lab_temp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px"  android:inputType="number" android:numeric="decimal"/>
+	       		<EditText android:id="@+id/in_lab_temp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px"  android:inputType="numberDecimal" android:numeric="decimal"/>
 	       		<TextView android:text="@string/form_lab_temp_e" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
        		</TableRow>
        		<TableRow>
 		      	<TextView android:text="@string/form_lab_HDL_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_lab_HDL" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="decimal"/>
+	       		<EditText android:id="@+id/in_lab_HDL" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="numberDecimal" android:numeric="decimal"/>
 	       		<TextView android:text="@string/form_lab_HDL_e" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
        		</TableRow>
        		<TableRow>
 		      	<TextView android:text="@string/form_lab_LDL_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_lab_LDL" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="decimal"/>
+	       		<EditText android:id="@+id/in_lab_LDL" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="numberDecimal" android:numeric="decimal"/>
 	       		<TextView android:text="@string/form_lab_LDL_e" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
        		</TableRow>
        		<TableRow>
 		      	<TextView android:text="@string/form_lab_chol_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_lab_chol" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="decimal"/>
+	       		<EditText android:id="@+id/in_lab_chol" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="numberDecimal" android:numeric="decimal"/>
        		</TableRow>
        		<TableRow>
 		      	<TextView android:text="@string/form_lab_trig_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_lab_trig" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="decimal"/>
+	       		<EditText android:id="@+id/in_lab_trig" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="numberDecimal" android:numeric="decimal"/>
        		</TableRow>
        		<TableRow>
 		      	<TextView android:text="@string/form_lab_uricacid_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_lab_uricacid" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="decimal"/>
+	       		<EditText android:id="@+id/in_lab_uricacid" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="numberDecimal" android:numeric="decimal"/>
        		</TableRow>
        		<TableRow>
 		      	<TextView android:text="@string/form_lab_systole_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_lab_systole" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="decimal"/>
+	       		<EditText android:id="@+id/in_lab_systole" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="numberDecimal" android:numeric="decimal"/>
        		</TableRow>
        		<TableRow>
 		      	<TextView android:text="@string/form_lab_diastole_ask" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-	       		<EditText android:id="@+id/in_lab_diastole" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="number" android:numeric="decimal"/>
+	       		<EditText android:id="@+id/in_lab_diastole" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:inputType="numberDecimal" android:numeric="decimal"/>
        		</TableRow>
      		<View android:layout_height="2dip" android:layout_width="fill_parent" android:background="#eeeeee" android:layout_marginTop="5dip"/>
      		
@@ -138,7 +138,7 @@
        		</LinearLayout>
        	<View android:layout_height="2dip" android:layout_width="fill_parent" android:background="#eeeeee" android:layout_marginTop="5dip"/>
        	
-     	<Button android:id="@+id/form_next" android:text="@string/form_btn_next" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+     	<Button android:id="@+id/form_btn_next" android:text="@string/form_btn_next" android:layout_width="fill_parent" android:layout_height="wrap_content" />
         
      </LinearLayout>
 

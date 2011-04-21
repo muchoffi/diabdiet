@@ -43,7 +43,7 @@
     <string name="form_clinic_fracture">I\'m currently having fracture</string>
     <string name="form_clinic_cellulitis">I have a cellulities disease</string>
     <string name="form_clinic_wound">I\'m having wound</string>
-    <string name="form_clinic_diablong">How long have you had diabetes?</string>
+    <string name="form_clinic_diablong">I have been having diabetes for more than 2 years</string>
     
     <string name="editk_header">Dear</string>
 </resources>

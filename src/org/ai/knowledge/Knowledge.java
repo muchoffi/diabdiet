@@ -7,7 +7,6 @@ package org.ai.knowledge;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -26,11 +25,10 @@ public class Knowledge {
     public static List<StatusKehamilan> S_Kehamilan = new ArrayList<StatusKehamilan>(); //List of Status Kehamilan
     public static List<StatusKomplikasi> S_Komplikasi = new ArrayList<StatusKomplikasi>();//list of StatusKomplikasi
 
-    private static List<String> ReadFile(String NameFile) {
+    private static List<String> ReadFile(FileInputStream is) {
         List<String> result = new ArrayList<String>();
-        File file = new File(NameFile);
         try {
-            FileInputStream fstream = new FileInputStream(file);
+            FileInputStream fstream = is;
             DataInputStream in = new DataInputStream(fstream);
             BufferedReader br = new BufferedReader(new InputStreamReader(in));
             String strLine;
@@ -44,13 +42,13 @@ public class Knowledge {
         return result;
     }
 
-    public static void WriteFile(String FileName) {
+    public static void WriteFile(FileOutputStream os) {
         byte[] file = null;;
         String temp = "";
         BufferedOutputStream bos = null;
         try {
             //create an object of FileOutputStream
-            FileOutputStream fos = new FileOutputStream(new File(FileName));
+            FileOutputStream fos = os;
 
             //create an object of BufferedOutputStream
             bos = new BufferedOutputStream(fos);
@@ -105,8 +103,8 @@ public class Knowledge {
 
     }
 
-    public static void ConvertToKnowledge(String FileName) {
-        List<String> LoS_File = ReadFile(FileName);
+    public static void ConvertToKnowledge(FileInputStream is) {
+        List<String> LoS_File = ReadFile(is);
         int S_Reader = 0; // 0 = readStatusGizi, 1 = readStatusKehamilan, 2 = readStatusKomplikasi
         String Data = "";
         for (int i = 0; i < LoS_File.size(); i++) {

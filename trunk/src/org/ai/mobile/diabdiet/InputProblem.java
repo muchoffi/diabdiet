@@ -17,7 +17,6 @@ public class InputProblem extends Activity {
         //Get button
         Button b = (Button) findViewById(R.id.form_btn_next);
         b.setOnClickListener(new OnClickListener() {			
-			@Override
 			public void onClick(View v) {
 				//Save input to external file
 				

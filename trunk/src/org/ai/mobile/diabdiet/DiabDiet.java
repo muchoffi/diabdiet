@@ -19,7 +19,6 @@ public class DiabDiet extends Activity {
         
         OnClickListener list;
         list = new OnClickListener() {			
-			@Override
 			public void onClick(View v) {
 				//New intents
 				Intent i = new Intent(DiabDiet.this, InputProblem.class);

@@ -31,7 +31,7 @@ public class DiabDiet extends Activity {
 		
 		list = new OnClickListener() {
 			
-			@Override
+
 			public void onClick(View v) {
 				//New intents
 				Intent i = new Intent(DiabDiet.this, EditKnowledge.class);

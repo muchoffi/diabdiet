@@ -177,7 +177,7 @@ public class Knowledge {
         S_Kehamilan.set(indeks, temp);
     }
 
-    public static void ChangeElememtS_Komplikasi(int indeks, String jns, int m_daging, int m_tempe){
+    public static void ChangeElementS_Komplikasi(int indeks, String jns, int m_daging, int m_tempe){
         StatusKomplikasi temp = (StatusKomplikasi) S_Komplikasi.get(indeks);
         if(!jns.equals(""))
         {
@@ -193,5 +193,12 @@ public class Knowledge {
         }
         
         S_Komplikasi.set(indeks,temp);
+    }
+    
+    public static void reset() {
+        S_Gizi 			= new ArrayList<StatusGizi>();      //List of StatusGizi
+        S_Kehamilan 	= new ArrayList<StatusKehamilan>(); //List of Status Kehamilan
+        S_Komplikasi 	= new ArrayList<StatusKomplikasi>();//list of StatusKomplikasi
+
     }
 }

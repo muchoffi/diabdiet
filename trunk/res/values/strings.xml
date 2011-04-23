@@ -45,5 +45,19 @@
     <string name="form_clinic_wound">I\'m having wound</string>
     <string name="form_clinic_diablong">I have been having diabetes for more than 2 years</string>
     
-    <string name="editk_header">Dear</string>
+    <string name="editk_header">Dear Expert, please be careful to tweak the knowledge settings</string>
+    <string name="editk_rbw_header">RBW Settings</string>
+    <string name="editk_rbw_type">Type</string>
+    <string name="editk_rbw_min">Min. Value</string>
+    <string name="editk_rbw_max">Max. Value</string>
+    <string name="editk_addcal_header">Additional Calories</string>
+    <string name="editk_addcal_type">Type</string>
+    <string name="editk_addcal_amount">Amount</string>
+    <string name="editk_complication_header">Complication constraints</string>
+    <string name="editk_complication_type">Type</string>
+    <string name="editk_complication_meat">Meat</string>
+    <string name="editk_complication_tempe">Tempe</string>
+    <string name="editk_save_btn">Save changes</string>
+    <string name="editk_server_btn">Load from server</string>
+    <string name="editk_toast_save">Settings saved</string>
 </resources>

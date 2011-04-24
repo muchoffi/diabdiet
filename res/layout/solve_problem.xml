@@ -22,6 +22,7 @@
 	       	<ImageView android:src="@drawable/smile" android:layout_width="wrap_content" android:layout_height="wrap_content" />
 	       	<TextView 
 	       		android:id="@+id/solve_say"
+	       		android:text="@string/solved_header"
 	       		android:layout_width="wrap_content" 
 	       		android:layout_height="wrap_content" 
 	       		android:layout_marginLeft="3dip" 
@@ -30,8 +31,21 @@
 	       		android:textColor="#000000"></TextView>
        	</LinearLayout>
        	
+       	<!-- DIET INFORMATION -->
+       	<LinearLayout
+       		android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="#eeeeee" android:layout_marginBottom="5dip" android:layout_marginTop="2dip">
+       		<TextView android:id="@+id/solved_dietname" android:textColor="#000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dip "/>
+       		<TextView android:id="@+id/solved_dietcal" android:textColor="#000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dip "/>
+       		</LinearLayout>
+       	
        	<!-- TABLE -->
        	<TableLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/solve_table">
+	       	<TableRow>
+	       		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10px" android:layout_marginRight="10px" android:text="@string/solved_type"/>
+	       		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10px" android:layout_marginRight="10px" android:text="@string/solved_time_7"/>
+	       		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10px" android:layout_marginRight="10px" android:text="@string/solved_time_12"/>
+	       		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10px" android:layout_marginRight="10px" android:text="@string/solved_time_6"/>
+	       	</TableRow>
        	</TableLayout>
        	
 	</LinearLayout>

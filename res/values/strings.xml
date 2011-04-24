@@ -60,4 +60,10 @@
     <string name="editk_save_btn">Save changes</string>
     <string name="editk_server_btn">Load from server</string>
     <string name="editk_toast_save">Settings saved</string>
+    
+    <string name="solved_header">Here is your diet menu!</string>
+    <string name="solved_type">Type</string>
+    <string name="solved_time_7">07.00</string>
+    <string name="solved_time_12">12.00</string>
+    <string name="solved_time_6">18.00</string>
 </resources>

@@ -30,10 +30,6 @@
 	       		android:textColor="#000000"></TextView>
        	</LinearLayout>
        	
-       	<!-- TABLE -->
-       	<TableLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/solve_table">
-       	</TableLayout>
-       	
        	<!-- RBW -->
        	<TextView 
        		android:layout_width="fill_parent" 

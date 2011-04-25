@@ -3,6 +3,7 @@ package org.ai.diabdiet.mobile;
 import java.io.FileNotFoundException;
 
 import org.ai.diabdiet.es.data.patient.*;
+import org.ai.diabdiet.es.data.patient.Anthropometry.Status;
 import org.ai.mobile.diabdiet.R;
 
 import android.app.Activity;
@@ -13,7 +14,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 
 public class InputProblem extends Activity {
@@ -22,6 +26,13 @@ public class InputProblem extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.input_problem);
+        
+        //Add listener to gender male radio button
+        ((RadioButton)findViewById(R.id.in_antro_gender_male)).setOnCheckedChangeListener(new OnCheckedChangeListener() {			
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				((LinearLayout)findViewById(R.id.form_antro_status)).setVisibility(isChecked ? View.GONE : View.VISIBLE);
+			}
+		});
         
         //Load patient
         loadPatientData();
@@ -49,7 +60,11 @@ public class InputProblem extends Activity {
 		p.anthropometry.bodyWeight = Float.parseFloat(((EditText)findViewById(R.id.in_antro_bodyheight)).getText().toString());
 		p.anthropometry.bodyWeight = Float.parseFloat(((EditText)findViewById(R.id.in_antro_bodyweight)).getText().toString());
 		p.anthropometry.isGenderMale = ((RadioButton)findViewById(R.id.in_antro_gender_male)).isChecked();
-		p.anthropometry.isPregnant = ((RadioButton)findViewById(R.id.in_antro_preg_yes)).isChecked();
+		if(p.anthropometry.isGenderMale) p.anthropometry.status = Status.NORMAL;
+		else {
+			if(((RadioButton)findViewById(R.id.in_antro_status_preg)).isChecked()) p.anthropometry.status = Status.PREGNANT;
+			else if(((RadioButton)findViewById(R.id.in_antro_status_breastfeed)).isChecked()) p.anthropometry.status = Status.BREASTFEEDING;
+		}
 
 		p.laboratory.cholesterol = Float.parseFloat(((EditText)findViewById(R.id.in_lab_chol)).getText().toString());
 		p.laboratory.diastole = Float.parseFloat(((EditText)findViewById(R.id.in_lab_diastole)).getText().toString());
@@ -92,8 +107,9 @@ public class InputProblem extends Activity {
 		((EditText)findViewById(R.id.in_antro_bodyweight)).setText("" + p.anthropometry.bodyWeight);
 		if(p.anthropometry.isGenderMale) ((RadioButton)findViewById(R.id.in_antro_gender_male)).toggle();
 		else ((RadioButton)findViewById(R.id.in_antro_gender_female)).toggle();
-		if(p.anthropometry.isPregnant) ((RadioButton)findViewById(R.id.in_antro_preg_yes)).toggle();
-		else ((RadioButton)findViewById(R.id.in_antro_preg_no)).toggle();
+		if(p.anthropometry.status == Status.PREGNANT) ((RadioButton)findViewById(R.id.in_antro_status_preg)).toggle();
+		else if(p.anthropometry.status == Status.BREASTFEEDING) ((RadioButton)findViewById(R.id.in_antro_status_breastfeed)).toggle();
+		else ((RadioButton)findViewById(R.id.in_antro_status_normal)).toggle();
 
 		((EditText)findViewById(R.id.in_lab_chol)).setText("" + p.laboratory.cholesterol);
 		((EditText)findViewById(R.id.in_lab_diastole)).setText("" + p.laboratory.diastole);

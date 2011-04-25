@@ -13,9 +13,10 @@
     <string name="form_antro_gender_ask">Gender</string>
     <string name="form_antro_gender_male">Male</string>
     <string name="form_antro_gender_female">Female</string>
-    <string name="form_antro_preg_ask">Are you Pregnant?</string>
-    <string name="form_antro_preg_yes">Yes</string>
-    <string name="form_antro_preg_no">No</string>
+    <string name="form_antro_status_ask">I am ...</string>
+    <string name="form_antro_status_preg">Pregnant</string>
+    <string name="form_antro_status_breastfeed">Breastfeeding</string>
+    <string name="form_antro_status_normal">None</string>
     <string name="form_antro_age_ask">Age</string>
     <string name="form_antro_age_e">y.o.</string>
     <string name="form_antro_bodyheight_ask">Height</string>

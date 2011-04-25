@@ -64,11 +64,13 @@
 	       		</RadioGroup>
 	       		</LinearLayout>
 	       	<LinearLayout
+	       		android:id="@+id/form_antro_status"
 	       		android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
-	       		<TextView android:text="@string/form_antro_preg_ask" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dip "/>
-	       		<RadioGroup android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-	       			<RadioButton android:id="@+id/in_antro_preg_yes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/form_antro_preg_yes" android:layout_marginLeft="5dip" android:layout_marginRight="5dip" />
-	       			<RadioButton android:id="@+id/in_antro_preg_no" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/form_antro_preg_no" />
+	       		<TextView android:text="@string/form_antro_status_ask" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dip "/>
+	       		<RadioGroup android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
+	       			<RadioButton android:id="@+id/in_antro_status_preg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/form_antro_status_preg" android:layout_marginLeft="2dip" android:layout_marginRight="2dip" />
+	       			<RadioButton android:id="@+id/in_antro_status_breastfeed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/form_antro_status_breastfeed" android:layout_marginLeft="2dip" android:layout_marginRight="2dip"/>
+	       			<RadioButton android:id="@+id/in_antro_status_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/form_antro_status_normal" android:layout_marginLeft="2dip" android:layout_marginRight="2dip"/>
 	       		</RadioGroup>
 	       		</LinearLayout>
      		<View android:layout_height="2dip" android:layout_width="fill_parent" android:background="#eeeeee" android:layout_marginTop="5dip"/>

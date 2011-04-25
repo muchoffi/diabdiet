@@ -15,7 +15,6 @@ import org.ai.diabdiet.es.data.knowledge.StatusKehamilan;
 import org.ai.diabdiet.es.data.knowledge.StatusKomplikasi;
 import org.ai.mobile.diabdiet.R;
 
-import android.R.bool;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;

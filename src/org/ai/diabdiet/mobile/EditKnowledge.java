@@ -14,12 +14,10 @@ import org.ai.mobile.diabdiet.R;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableLayout;
@@ -61,30 +59,30 @@ public class EditKnowledge extends Activity {
 		TableLayout table = (TableLayout) findViewById(R.id.editk_complication_table);
 		int i = 0;
 		for(StatusKomplikasi sk : Knowledge.S_Komplikasi) {
-			++i;
 			ComplicationUIRow c = new ComplicationUIRow(this, i, sk);
 			table.addView(c);
 			_compUIRows.add(c);
+			++i;
 		}
 		
 		//Print Gizi
 		table = (TableLayout) findViewById(R.id.editk_rbw_table);
 		i = 0;
 		for(StatusGizi sk : Knowledge.S_Gizi) {
-			++i;
 			GiziUIRow c = new GiziUIRow(this, i, sk);
 			table.addView(c);
 			_giziUIRows.add(c);
+			++i;
 		}
 		
 		//Print Additional calories
 		table = (TableLayout) findViewById(R.id.editk_addcal_table);
 		i = 0;
 		for(StatusKehamilan sk : Knowledge.S_Kehamilan) {
-			++i;
 			AdditionalCalUIRow c = new AdditionalCalUIRow(this, i, sk);
 			table.addView(c);
 			_addCalUIRows.add(c);
+			++i;
 		}
 		
 		//Click handlers
@@ -145,7 +143,7 @@ public class EditKnowledge extends Activity {
 		}
 		
 		public void updateStatusKomplikasi() {
-			//Knowledge.ChangeElementS_Komplikasi(_id, "", Float.parseFloat(_meat.getText().toString()), Float.parseFloat(_tempe.toString()));
+			Knowledge.ChangeElementS_Komplikasi(_id, "", (int)Float.parseFloat(_meat.getText().toString()), (int)Float.parseFloat(_tempe.getText().toString()));
 		}
 	}
 	
@@ -180,7 +178,7 @@ public class EditKnowledge extends Activity {
 		}
 		
 		public void updateGizi() {
-			//Knowledge.ChangeElementS_Gizi(_id, "", Float.parseFloat(_min.getText().toString()), Float.parseFloat(_max.toString()));
+			Knowledge.ChangeElementS_Gizi(_id, "", Float.parseFloat(_min.getText().toString()), Float.parseFloat(_max.getText().toString()));
 		}
 	}
 	
@@ -209,7 +207,7 @@ public class EditKnowledge extends Activity {
 		}
 		
 		public void updateAdditionalCals() {
-			//Knowledge.ChangeElementS_Kehamilan(_id, "", Integer.parseInt(_calories.getText().toString()));
+			Knowledge.ChangeElementS_Kehamilan(_id, "", Integer.parseInt(_calories.getText().toString()));
 		}
 	}
 }

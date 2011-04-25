@@ -3,6 +3,9 @@ package org.ai.diabdiet.mobile;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +15,7 @@ import org.ai.diabdiet.es.data.knowledge.StatusKehamilan;
 import org.ai.diabdiet.es.data.knowledge.StatusKomplikasi;
 import org.ai.mobile.diabdiet.R;
 
+import android.R.bool;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -35,6 +39,9 @@ public class EditKnowledge extends Activity {
 		super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_knowledge);
         
+        //Reset view
+        resetView();
+        
         //Load knowledge from data        
         InputStream is = null;
         try {
@@ -47,6 +54,70 @@ public class EditKnowledge extends Activity {
 				e1.printStackTrace();
 			}
 		}
+		
+		//Display the data
+		loadView(is);
+		
+		//Click handler - save
+		Button b = (Button) findViewById(R.id.editk_save_btn);
+		b.setOnClickListener(new OnClickListener() {			
+			public void onClick(View v) {
+				//Update UIs
+				for(AdditionalCalUIRow vv : _addCalUIRows) vv.updateAdditionalCals();
+				for(ComplicationUIRow vv : _compUIRows) vv.updateStatusKomplikasi();
+				for(GiziUIRow vv : _giziUIRows) vv.updateGizi();
+				
+				//Save
+				try {
+					Knowledge.WriteFile(openFileOutput(FilePaths.KNOWLEDGE, Context.MODE_PRIVATE));
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				}
+				
+				//Notify users
+				Toast.makeText(getThis(), R.string.editk_toast_save, Toast.LENGTH_LONG).show();
+			}
+		});
+		
+		//Click handler - load from server
+		b = (Button) findViewById(R.id.editk_server_btn);
+		b.setOnClickListener(new OnClickListener() {			
+			public void onClick(View v) {
+				//Connect to server
+				InputStream in = null;
+				boolean succ = true;
+				try {
+					in = OpenHttpConnection("http://fbbed.cer33.com/AI/knowledge.txt");
+					if(in == null) succ = false;
+					else {
+						resetView();
+						loadView(in);
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+					succ = false;
+				}
+				
+				//User feedback
+				if(succ) {
+					Toast.makeText(getThis(), "Knowledge loaded from server", Toast.LENGTH_LONG).show();
+				} else {
+					Toast.makeText(getThis(), "Failed to connect server", Toast.LENGTH_LONG).show();
+				}
+			}
+		});
+	}
+	
+	private void resetView() {
+		TableLayout table = (TableLayout) findViewById(R.id.editk_complication_table);
+		while(table.getChildCount() > 1) { table.removeViewAt(1); }
+		table = (TableLayout) findViewById(R.id.editk_rbw_table);
+		while(table.getChildCount() > 1) { table.removeViewAt(1); }
+		table = (TableLayout) findViewById(R.id.editk_addcal_table);
+		while(table.getChildCount() > 1) { table.removeViewAt(1); }
+	}
+	
+	private void loadView(InputStream is) {
 		Knowledge.reset();
 		Knowledge.ConvertToKnowledge(is);
 		
@@ -84,30 +155,40 @@ public class EditKnowledge extends Activity {
 			_addCalUIRows.add(c);
 			++i;
 		}
-		
-		//Click handlers
-		Button b = (Button) findViewById(R.id.editk_save_btn);
-		b.setOnClickListener(new OnClickListener() {			
-			public void onClick(View v) {
-				//Update UIs
-				for(AdditionalCalUIRow vv : _addCalUIRows) vv.updateAdditionalCals();
-				for(ComplicationUIRow vv : _compUIRows) vv.updateStatusKomplikasi();
-				for(GiziUIRow vv : _giziUIRows) vv.updateGizi();
-				
-				//Save
-				try {
-					Knowledge.WriteFile(openFileOutput(FilePaths.KNOWLEDGE, Context.MODE_PRIVATE));
-				} catch (FileNotFoundException e) {
-					e.printStackTrace();
-				}
-				
-				//Notify users
-				Toast.makeText(getThis(), R.string.editk_toast_save, Toast.LENGTH_LONG).show();
-			}
-		});
 	}
 	
 	private EditKnowledge getThis() { return this; }
+	
+	private InputStream OpenHttpConnection(String urlString) 
+    throws IOException
+    {
+        InputStream in = null;
+        int response = -1;
+               
+        URL url = new URL(urlString); 
+        URLConnection conn = url.openConnection();
+                 
+        if (!(conn instanceof HttpURLConnection))                     
+            throw new IOException("Not an HTTP connection");
+        
+        try{
+            HttpURLConnection httpConn = (HttpURLConnection) conn;
+            httpConn.setAllowUserInteraction(false);
+            httpConn.setInstanceFollowRedirects(true);
+            httpConn.setRequestMethod("GET");
+            httpConn.connect(); 
+
+            response = httpConn.getResponseCode();                 
+            if (response == HttpURLConnection.HTTP_OK) {
+                in = httpConn.getInputStream();                                 
+            }                     
+        }
+        catch (Exception ex)
+        {
+            throw new IOException("Error connecting");            
+        }
+        return in;     
+    }
 	
 	
 	/************* UI CLASSES **************************/

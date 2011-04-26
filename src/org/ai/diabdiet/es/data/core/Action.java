@@ -26,7 +26,6 @@ public class Action {
     public static float B1;
     public static void aksi(int i)
     {
-        int itr; //buat iterator
         if(i == 0) //aksi pertama
         {
             //aksi Menu Diet Diabetes Tipe 2

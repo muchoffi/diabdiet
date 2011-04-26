@@ -14,6 +14,9 @@ public class DetailMenu {
     private float second;
     private float third;
 
+    public DetailMenu() {
+    }
+
     public DetailMenu(float first, float second, float third) {
         this.first = first;
         this.second = second;

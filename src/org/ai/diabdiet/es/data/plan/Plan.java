@@ -13,12 +13,12 @@ import java.util.List;
  */
 public class Plan {
 
-    int ID;
-    int Relation; // 0 Null, 1 And, 2 Or
-    List<Plan> Child;
-    List<Integer> LChild; // klo g punya anak -1
-    int ID_Parent;
-    int Action;
+    public int ID;
+    public int Relation; // 0 Null, 1 And, 2 Or
+    public List<Plan> Child;
+    public List<Integer> LChild; // klo g punya anak -1
+    public int ID_Parent;
+    public int Action;
 
     public Plan() {
         ID = 0;

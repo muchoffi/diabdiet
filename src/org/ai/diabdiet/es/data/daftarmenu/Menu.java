@@ -21,6 +21,9 @@ public class Menu {
     private DetailMenu pisang;
     private DetailMenu pepaya;
     private DetailMenu sususkim;
+
+    public Menu() {
+    }
     /*
     private ArrayList<Float> nasi = new ArrayList<Float>();
     private ArrayList<Float> daging = new ArrayList<Float>();
@@ -49,6 +52,7 @@ public class Menu {
          
     }
 */
+
     public Menu(int kalori, String tipediet, DetailMenu nasi, DetailMenu daging, DetailMenu tempe, DetailMenu sayuranA, DetailMenu sayuranB, DetailMenu minyak, DetailMenu pisang, DetailMenu pepaya, DetailMenu sususkim) {
         this.kalori = kalori;
         this.tipediet = tipediet;

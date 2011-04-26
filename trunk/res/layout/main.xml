@@ -16,8 +16,15 @@ android:width="150dip"
 android:layout_height="wrap_content"></Button>
 
 <Button 
-android:text="@string/main_edit" 
-android:id="@+id/main_edit" 
+android:text="@string/main_editk" 
+android:id="@+id/main_editk" 
+android:layout_width="wrap_content"
+android:width="150dip"
+android:layout_height="wrap_content"></Button>
+
+<Button 
+android:text="@string/main_editm" 
+android:id="@+id/main_editm" 
 android:layout_width="wrap_content"
 android:width="150dip"
 android:layout_height="wrap_content"></Button>

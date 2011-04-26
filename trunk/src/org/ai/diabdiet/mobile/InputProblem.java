@@ -1,9 +1,11 @@
 package org.ai.diabdiet.mobile;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.ai.diabdiet.es.data.patient.*;
 import org.ai.diabdiet.es.data.patient.Anthropometry.Status;
+import org.ai.diabdiet.es.data.patient.Patient;
 import org.ai.mobile.diabdiet.R;
 
 import android.app.Activity;
@@ -19,6 +21,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class InputProblem extends Activity {
     /** Called when the activity is first created. */
@@ -42,23 +45,23 @@ public class InputProblem extends Activity {
         b.setOnClickListener(new OnClickListener() {			
 			public void onClick(View v) {
 				//Save input to external file
-				updatePatient();
-				
-				//Go to solve screen
-				Intent i = new Intent(InputProblem.this, SolveProblem.class);
-				startActivity(i);
+				if(updatePatient()) {
+					//Go to solve screen
+					Intent i = new Intent(InputProblem.this, SolveProblem.class);
+					startActivity(i);
+				}
 			}
 		});
     }
     
-    protected void updatePatient() {	
+    protected boolean updatePatient() {	
     	//Init patient
         Patient p = new Patient();
         
 		//Assign settings
-		p.anthropometry.age = Integer.parseInt(((EditText)findViewById(R.id.in_antro_age)).getText().toString());
-		p.anthropometry.bodyWeight = Float.parseFloat(((EditText)findViewById(R.id.in_antro_bodyheight)).getText().toString());
-		p.anthropometry.bodyWeight = Float.parseFloat(((EditText)findViewById(R.id.in_antro_bodyweight)).getText().toString());
+		p.anthropometry.age = (int)parseFloat(((EditText)findViewById(R.id.in_antro_age)).getText().toString());
+		p.anthropometry.bodyWeight = parseFloat(((EditText)findViewById(R.id.in_antro_bodyheight)).getText().toString());
+		p.anthropometry.bodyWeight = parseFloat(((EditText)findViewById(R.id.in_antro_bodyweight)).getText().toString());
 		p.anthropometry.isGenderMale = ((RadioButton)findViewById(R.id.in_antro_gender_male)).isChecked();
 		if(p.anthropometry.isGenderMale) p.anthropometry.status = Status.NORMAL;
 		else {
@@ -66,15 +69,16 @@ public class InputProblem extends Activity {
 			else if(((RadioButton)findViewById(R.id.in_antro_status_breastfeed)).isChecked()) p.anthropometry.status = Status.BREASTFEEDING;
 		}
 
-		p.laboratory.cholesterol = Float.parseFloat(((EditText)findViewById(R.id.in_lab_chol)).getText().toString());
-		p.laboratory.diastole = Float.parseFloat(((EditText)findViewById(R.id.in_lab_diastole)).getText().toString());
-		p.laboratory.systole = Float.parseFloat(((EditText)findViewById(R.id.in_lab_systole)).getText().toString());
-		p.laboratory.HDL = Float.parseFloat(((EditText)findViewById(R.id.in_lab_HDL)).getText().toString());
-		p.laboratory.LDL = Float.parseFloat(((EditText)findViewById(R.id.in_lab_LDL)).getText().toString());
-		p.laboratory.temperature = Float.parseFloat(((EditText)findViewById(R.id.in_lab_temp)).getText().toString());
-		p.laboratory.triglyceride = Float.parseFloat(((EditText)findViewById(R.id.in_lab_trig)).getText().toString());
-		p.anthropometry.bodyWeight = Float.parseFloat(((EditText)findViewById(R.id.in_lab_uricacid)).getText().toString());
+		p.laboratory.cholesterol = parseFloat(((EditText)findViewById(R.id.in_lab_chol)).getText().toString());
+		p.laboratory.diastole = parseFloat(((EditText)findViewById(R.id.in_lab_diastole)).getText().toString());
+		p.laboratory.systole = parseFloat(((EditText)findViewById(R.id.in_lab_systole)).getText().toString());
+		p.laboratory.HDL = parseFloat(((EditText)findViewById(R.id.in_lab_HDL)).getText().toString());
+		p.laboratory.LDL = parseFloat(((EditText)findViewById(R.id.in_lab_LDL)).getText().toString());
+		p.laboratory.temperature = parseFloat(((EditText)findViewById(R.id.in_lab_temp)).getText().toString());
+		p.laboratory.triglyceride = parseFloat(((EditText)findViewById(R.id.in_lab_trig)).getText().toString());
+		p.laboratory.uricAcid = parseFloat(((EditText)findViewById(R.id.in_lab_uricacid)).getText().toString());
 
+		p.clinicalAnamnesa.digestionProb = ((CheckBox)findViewById(R.id.in_anam_digest)).isChecked();
 		p.clinicalAnamnesa.swallowProb = ((CheckBox)findViewById(R.id.in_anam_swallow)).isChecked();
 		p.clinicalAnamnesa.bloodVeinProb = ((CheckBox)findViewById(R.id.in_clinic_bloodvein)).isChecked();
 		p.clinicalAnamnesa.cellulitis = ((CheckBox)findViewById(R.id.in_clinic_cellulitis)).isChecked();
@@ -83,20 +87,33 @@ public class InputProblem extends Activity {
 		p.clinicalAnamnesa.hungerControl = ((CheckBox)findViewById(R.id.in_clinic_standhunger)).isChecked();
 		p.clinicalAnamnesa.wound = ((CheckBox)findViewById(R.id.in_clinic_wound)).isChecked();
 		
-		//Save patient
-		try {
-			p.save(openFileOutput(FilePaths.PATIENT, Context.MODE_PRIVATE));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		//Validate first..
+		List<String> errs = new ArrayList<String>();
+		boolean succ = p.validate(errs);
+		if(succ) {		
+			//Save patient
+			try {
+				p.save(openFileOutput(Utils.PATIENT, Context.MODE_PRIVATE));
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+		} else {
+			// Display errors
+			for(String s : errs) Toast.makeText(this, s, 300).show();
 		}
+		
+		return succ;
 	}
 
+    private float parseFloat(String s) {
+    	return s.length() > 0 ? Float.parseFloat(s) : 0;
+    }
+    
 	private void loadPatientData() {    
         //Load file
         Patient p = new Patient();
         try {
-			p.load(openFileInput(FilePaths.PATIENT));
+			p.load(openFileInput(Utils.PATIENT));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -118,9 +135,10 @@ public class InputProblem extends Activity {
 		((EditText)findViewById(R.id.in_lab_LDL)).setText("" + p.laboratory.LDL);
 		((EditText)findViewById(R.id.in_lab_temp)).setText("" + p.laboratory.temperature);
 		((EditText)findViewById(R.id.in_lab_trig)).setText("" + p.laboratory.triglyceride);
-		((EditText)findViewById(R.id.in_lab_uricacid)).setText("" + p.anthropometry.bodyWeight);
+		((EditText)findViewById(R.id.in_lab_uricacid)).setText("" + p.laboratory.uricAcid);
 
 		((CheckBox)findViewById(R.id.in_anam_swallow)).setChecked(p.clinicalAnamnesa.swallowProb);
+		((CheckBox)findViewById(R.id.in_anam_digest)).setChecked(p.clinicalAnamnesa.digestionProb);
 		((CheckBox)findViewById(R.id.in_clinic_bloodvein)).setChecked(p.clinicalAnamnesa.bloodVeinProb);
 		((CheckBox)findViewById(R.id.in_clinic_cellulitis)).setChecked(p.clinicalAnamnesa.cellulitis);
 		((CheckBox)findViewById(R.id.in_clinic_diablong)).setChecked(p.clinicalAnamnesa.diabMoreThan2Years);

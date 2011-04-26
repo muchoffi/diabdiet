@@ -14,6 +14,7 @@
     <activity android:label="Input Problem" android:name="org.ai.diabdiet.mobile.InputProblem"></activity>
 <activity android:label="Diet Plan" android:name="org.ai.diabdiet.mobile.SolveProblem"></activity>
 <activity android:label="Edit Knowledge" android:name="org.ai.diabdiet.mobile.EditKnowledge"></activity>
+<activity android:label="Diet Menu List" android:name="org.ai.diabdiet.mobile.DietMenuList"></activity>
 </application>
     <uses-sdk android:minSdkVersion="4" />
 

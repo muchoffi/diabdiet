@@ -17,9 +17,12 @@ public class DiabDiet extends Activity {
         setContentView(R.layout.main);
 
         Button main_solve 	= (Button) findViewById(R.id.main_solve);
-        Button main_edit	= (Button) findViewById(R.id.main_edit);
+        Button main_editk	= (Button) findViewById(R.id.main_editk);
+        Button main_editm	= (Button) findViewById(R.id.main_editm);
         
         OnClickListener list;
+        
+        //Solve problem
         list = new OnClickListener() {			
 			public void onClick(View v) {
 				//New intents
@@ -29,16 +32,25 @@ public class DiabDiet extends Activity {
 		};		
 		main_solve.setOnClickListener(list);
 		
+		//Edit knowledge
 		list = new OnClickListener() {
-			
-
 			public void onClick(View v) {
 				//New intents
 				Intent i = new Intent(DiabDiet.this, EditKnowledge.class);
 				startActivity(i);
 			}
 		};
-		main_edit.setOnClickListener(list);
+		main_editk.setOnClickListener(list);
+		
+		//Edit diet menu
+		list = new OnClickListener() {
+			public void onClick(View v) {
+				//New intents
+				Intent i = new Intent(DiabDiet.this, DietMenuList.class);
+				startActivity(i);
+			}
+		};
+		main_editm.setOnClickListener(list);
 
     }
 }

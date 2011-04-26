@@ -6,6 +6,8 @@
 package org.ai.diabdiet.es.data.core;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import org.ai.diabdiet.es.data.daftarmenu.Menu;
 
 
@@ -18,6 +20,6 @@ public class Result {
         
     }
     public Menu menuHasilInferensi;
-    public ArrayList<String> Alasan = new ArrayList<String>();
-    public ArrayList<ArrayList<String>> Tips = new ArrayList<ArrayList<String>>();
+    public List<String> Alasan = new ArrayList<String>();
+    public List<ArrayList<String>> Tips = new ArrayList<ArrayList<String>>();
 }

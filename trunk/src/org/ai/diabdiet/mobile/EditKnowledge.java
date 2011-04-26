@@ -3,9 +3,6 @@ package org.ai.diabdiet.mobile;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,11 +41,11 @@ public class EditKnowledge extends Activity {
         //Load knowledge from data        
         InputStream is = null;
         try {
-			is = openFileInput(FilePaths.KNOWLEDGE);
+			is = openFileInput(Utils.KNOWLEDGE);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			try {
-				is = getAssets().open(FilePaths.KNOWLEDGE);
+				is = getAssets().open(Utils.KNOWLEDGE);
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
@@ -61,20 +58,7 @@ public class EditKnowledge extends Activity {
 		Button b = (Button) findViewById(R.id.editk_save_btn);
 		b.setOnClickListener(new OnClickListener() {			
 			public void onClick(View v) {
-				//Update UIs
-				for(AdditionalCalUIRow vv : _addCalUIRows) vv.updateAdditionalCals();
-				for(ComplicationUIRow vv : _compUIRows) vv.updateStatusKomplikasi();
-				for(GiziUIRow vv : _giziUIRows) vv.updateGizi();
-				
-				//Save
-				try {
-					Knowledge.WriteFile(openFileOutput(FilePaths.KNOWLEDGE, Context.MODE_PRIVATE));
-				} catch (FileNotFoundException e) {
-					e.printStackTrace();
-				}
-				
-				//Notify users
-				Toast.makeText(getThis(), R.string.editk_toast_save, Toast.LENGTH_LONG).show();
+				save();
 			}
 		});
 		
@@ -86,7 +70,7 @@ public class EditKnowledge extends Activity {
 				InputStream in = null;
 				boolean succ = true;
 				try {
-					in = OpenHttpConnection("http://fbbed.cer33.com/AI/knowledge.txt");
+					in = Utils.OpenHttpConnection(Utils.URL_KNOWLEDGE);
 					if(in == null) succ = false;
 					else {
 						resetView();
@@ -99,9 +83,10 @@ public class EditKnowledge extends Activity {
 				
 				//User feedback
 				if(succ) {
-					Toast.makeText(getThis(), "Knowledge loaded from server", Toast.LENGTH_LONG).show();
+					Toast.makeText(getThis(), "Knowledge loaded from server", Toast.LENGTH_SHORT).show();
+					save();
 				} else {
-					Toast.makeText(getThis(), "Failed to connect server", Toast.LENGTH_LONG).show();
+					Toast.makeText(getThis(), "Failed to connect server", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
@@ -156,38 +141,24 @@ public class EditKnowledge extends Activity {
 		}
 	}
 	
-	private EditKnowledge getThis() { return this; }
+	private void save() {
+		//Update UIs
+		for(AdditionalCalUIRow vv : _addCalUIRows) vv.updateAdditionalCals();
+		for(ComplicationUIRow vv : _compUIRows) vv.updateStatusKomplikasi();
+		for(GiziUIRow vv : _giziUIRows) vv.updateGizi();
+		
+		//Save
+		try {
+			Knowledge.WriteFile(openFileOutput(Utils.KNOWLEDGE, Context.MODE_PRIVATE));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		//Notify users
+		Toast.makeText(getThis(), R.string.editk_toast_save, Toast.LENGTH_SHORT).show();
+	}
 	
-	private InputStream OpenHttpConnection(String urlString) 
-    throws IOException
-    {
-        InputStream in = null;
-        int response = -1;
-               
-        URL url = new URL(urlString); 
-        URLConnection conn = url.openConnection();
-                 
-        if (!(conn instanceof HttpURLConnection))                     
-            throw new IOException("Not an HTTP connection");
-        
-        try{
-            HttpURLConnection httpConn = (HttpURLConnection) conn;
-            httpConn.setAllowUserInteraction(false);
-            httpConn.setInstanceFollowRedirects(true);
-            httpConn.setRequestMethod("GET");
-            httpConn.connect(); 
-
-            response = httpConn.getResponseCode();                 
-            if (response == HttpURLConnection.HTTP_OK) {
-                in = httpConn.getInputStream();                                 
-            }                     
-        }
-        catch (Exception ex)
-        {
-            throw new IOException("Error connecting");            
-        }
-        return in;     
-    }
+	private EditKnowledge getThis() { return this; }
 	
 	
 	/************* UI CLASSES **************************/

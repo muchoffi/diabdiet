@@ -3,7 +3,8 @@
     <string name="hello">Hello World, DiabDiet!</string>
     <string name="app_name">Diab Diet</string>
     <string name="main_solve">Solve Problem</string>
-    <string name="main_edit">Edit Knowledge</string>
+    <string name="main_editk">Edit Knowledge</string>
+    <string name="main_editm">Edit Diet Menu</string>
     
     <string name="form_btn_next">Give me diet plan!</string>
     
@@ -39,6 +40,7 @@
     
     <string name="form_clinic_anam_header">Clinical And Anamnesa Record</string>
     <string name="form_anam_swallow">I have problem swallowing food</string>
+    <string name="form_anam_digest">I have problem in my digestion system</string>
     <string name="form_clinic_standhunger">I can control my hunger in a diet</string>
     <string name="form_clinic_bloodvein">I ever have problems with my blood veins</string>
     <string name="form_clinic_fracture">I\'m currently having fracture</string>
@@ -62,9 +64,14 @@
     <string name="editk_server_btn">Load from server</string>
     <string name="editk_toast_save">Settings saved</string>
     
-    <string name="solved_header">Here is your diet menu!</string>
+    <string name="solved_header">Here is the best diet plan for you!</string>
     <string name="solved_type">Type</string>
-    <string name="solved_time_7">07.00</string>
-    <string name="solved_time_12">12.00</string>
-    <string name="solved_time_6">18.00</string>
+    <string name="solved_time_7">07.00 (gr)</string>
+    <string name="solved_time_12">12.00 (gr)</string>
+    <string name="solved_time_6">18.00 (gr)</string>
+    <string name="solved_explanation_header">Explanations</string>
+    <string name="solved_tips_header">Tips</string>
+    
+    <string name="dietlist_menu_savechanges">Save changes</string>
+    <string name="dietlist_menu_loadfromserver">Load from server</string>
 </resources>

@@ -69,7 +69,7 @@ public class core{
                 return;
             }
             this.listMenu = FileOperation.OpenFileListMenu(ListMenu);// dapet listMenu
-            this.treePlan = new TreePlan((FileInputStream) (TreePlan)); //dapet masukan tree plan
+            this.treePlan = new TreePlan((TreePlan)); //dapet masukan tree plan
             Knowledge.ConvertToKnowledge(inKnowledge);
             this.hasInitiated = true;
 

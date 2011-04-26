@@ -140,9 +140,9 @@ public class core{
             }
 
             //bagian massa tubuh
-            tempS = "Your body mass: "+RBW;
             if(P.anthropometry.status == Status.NORMAL)
             {
+                tempS = "Your body mass: "+RBW;
                 tempS = tempS + " and considered as ";
                 if(ukuranBadan == BodySize.GEMUK)
                     tempS = tempS + "fat";
@@ -152,17 +152,17 @@ public class core{
                     tempS = tempS + "thin";
                 else
                     tempS = tempS + "obesity";
+                Alasan.add(tempS);
             }
-            Alasan.add(tempS);
 
             //bagian asam urat
             if(isAsamUratNormal == true)
             {
                 tempS = "You have abnormal uric acid, the normal value is ";
                 if(P.anthropometry.isGenderMale == true) //cowok
-                    tempS="3.5 - 7.0";
+                    tempS=tempS + "3.5 - 7.0";
                 else //cewek
-                    tempS ="2.8 - 6.8";
+                    tempS =tempS + "2.8 - 6.8";
                 Alasan.add(tempS);
             }
 
@@ -247,17 +247,23 @@ public class core{
                 //System.out.println(core.GetInstance().listMenu.getListmenu().get(0).getDaging().getFirst());
                 //System.out.println(core.GetInstance().listMenu.getListmenu().get(0).getDaging().getSecond());
                 //P.anthropometry.bodyWeight = 999;
-                P.anthropometry.status = Status.PREGNANT;
+                //P.anthropometry.status = Status.PREGNANT;
                 core.GetInstance().solve(P);
-                System.out.println("As urat: "+core.GetInstance().isAsamUratNormal);
-                System.out.println("As urat: "+core.GetInstance().tekananDarah);
-                System.out.println("kalori "+core.GetInstance().menuHasilInferensi.getKalori());
-                System.out.println("tipe diet "+core.GetInstance().menuHasilInferensi.getTipediet());
-                System.out.println("daging: "+ core.GetInstance().menuHasilInferensi.getDaging().getFirst());
-                System.out.println("daging: "+ core.GetInstance().menuHasilInferensi.getDaging().getSecond());
-                System.out.println("daging: "+ core.GetInstance().menuHasilInferensi.getDaging().getThird());
+                //System.out.println("As urat: "+core.GetInstance().isAsamUratNormal);
+                //System.out.println("As urat: "+core.GetInstance().tekananDarah);
+                //System.out.println("kalori "+core.GetInstance().menuHasilInferensi.getKalori());
+                //System.out.println("tipe diet "+core.GetInstance().menuHasilInferensi.getTipediet());
+                //System.out.println("daging: "+ core.GetInstance().menuHasilInferensi.getDaging().getFirst());
+                //System.out.println("daging: "+ core.GetInstance().menuHasilInferensi.getDaging().getSecond());
+                //System.out.println("daging: "+ core.GetInstance().menuHasilInferensi.getDaging().getThird());
                 //System.out.println(core.GetInstance().listMenu.getListmenu().get(0).getDaging().getFirst());
                 //System.out.println(core.GetInstance().listMenu.getListmenu().get(0).getDaging().getSecond());
                 //System.out.println(core.GetInstance().kaloriTotalNormal);
-	}	
+                System.out.println(P.anthropometry.bodyHeight);
+                System.out.println(P.anthropometry.bodyWeight);
+                for(int j =0;j<core.GetInstance().Alasan.size();j++)
+                {
+                    System.out.println(core.GetInstance().Alasan.get(j));
+                }
+        }
 }

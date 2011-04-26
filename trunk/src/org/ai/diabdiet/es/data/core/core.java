@@ -1,6 +1,8 @@
 package org.ai.diabdiet.es.data.core;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +10,7 @@ import org.ai.diabdiet.es.data.daftarmenu.FileOperation;
 import org.ai.diabdiet.es.data.daftarmenu.ListMenu;
 import org.ai.diabdiet.es.data.daftarmenu.Menu;
 import org.ai.diabdiet.es.data.knowledge.Knowledge;
+import org.ai.diabdiet.es.data.patient.Anthropometry.Status;
 import org.ai.diabdiet.es.data.patient.Patient;
 import org.ai.diabdiet.es.data.plan.Plan;
 import org.ai.diabdiet.es.data.plan.TreePlan;
@@ -49,9 +52,12 @@ public class core{
         public boolean isLDLNormal;
         public boolean isTriNormal;
         public boolean isCholesterolNormal;
+        public boolean isRendahSerat;
         //bagian diet
         public boolean isDietB;
         public Menu menuHasilInferensi;
+        public ArrayList<String> Alasan = new ArrayList<String>();
+        public ArrayList<ArrayList<String>> Tips = new ArrayList<ArrayList<String>>();
         //=====================================================================
 
 	//method
@@ -82,7 +88,7 @@ public class core{
 	}
 
 
-        public Menu solve(Patient P)
+        public Result solve(Patient P)
         {
            //seluruh working memory dijadikan kosong!
            isHamilMenyusui = false;
@@ -101,9 +107,11 @@ public class core{
            isLDLNormal = true;
            isTriNormal = true;
            isCholesterolNormal = true;
+           isRendahSerat = false;
             //bagian diet
            isDietB = true; 
-
+           Tips.clear();
+           Alasan.clear();
             //=======================================
             listP.add(this.GetInstance().treePlan.Tree.get(0));
             Action.P = P;
@@ -113,11 +121,20 @@ public class core{
                 //System.out.println(listP.get(0).Action);
                 listP.remove(0);
             }
-            return menuHasilInferensi;
+            //tulis semua alasannya berdasarkan data working memory
+            Alasan.add("");
+
+            Result temp = new Result();
+            temp.Alasan = Alasan;
+            temp.Tips = Tips;
+            temp.menuHasilInferensi = menuHasilInferensi;
+
+
+            return temp;
         }
 	//============================================================================
 	
-/*	public static void main(String[] args) throws FileNotFoundException//ini buat mainnya doank
+	public static void main(String[] args) throws FileNotFoundException//ini buat mainnya doank
 	{
 		System.out.println("Robert Ganteng");
                 Patient P = new Patient();
@@ -140,8 +157,15 @@ public class core{
                 //P.anthropometry.bodyWeight = 999;
                 P.anthropometry.status = Status.PREGNANT;
                 core.GetInstance().solve(P);
+                System.out.println("As urat: "+core.GetInstance().isAsamUratNormal);
+                System.out.println("As urat: "+core.GetInstance().tekananDarah);
                 System.out.println("kalori "+core.GetInstance().menuHasilInferensi.getKalori());
                 System.out.println("tipe diet "+core.GetInstance().menuHasilInferensi.getTipediet());
+                System.out.println("daging: "+ core.GetInstance().menuHasilInferensi.getDaging().getFirst());
+                System.out.println("daging: "+ core.GetInstance().menuHasilInferensi.getDaging().getSecond());
+                System.out.println("daging: "+ core.GetInstance().menuHasilInferensi.getDaging().getThird());
+                //System.out.println(core.GetInstance().listMenu.getListmenu().get(0).getDaging().getFirst());
+                //System.out.println(core.GetInstance().listMenu.getListmenu().get(0).getDaging().getSecond());
                 //System.out.println(core.GetInstance().kaloriTotalNormal);
-	}*/	
+	}	
 }

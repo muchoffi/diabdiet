@@ -1,7 +1,7 @@
 package org.ai.diabdiet.es.data.patient;
 
 public class ClinicalAnamnesa {
-
+        public boolean digestionProb  = false; //gangguan pencernaan, default: false
 	public boolean swallowProb 			= false; //gangguan menelan / pencernaan
 	public boolean hungerControl		= true; //tahan lapar
 	public boolean bloodVeinProb		= false; //pembuluh darah

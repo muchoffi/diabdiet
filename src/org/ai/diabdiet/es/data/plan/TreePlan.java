@@ -6,6 +6,7 @@
 package org.ai.diabdiet.es.data.plan;
 
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class TreePlan {
         Tree = new ArrayList<Plan>();
     }
 
-    public TreePlan(FileInputStream is){
+    public TreePlan(InputStream is){
         Tree = new ArrayList<Plan>();
         List<String> Data = FileAction.ReadFile(is);
 

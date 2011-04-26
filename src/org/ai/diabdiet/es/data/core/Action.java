@@ -260,13 +260,13 @@ public class Action {
             if(tempKol == false) //kolesterol tinggi
             {
                 ArrayList<String> temp = new ArrayList<String>();
-                temp.add("TIPS for Hipercholesterol");
-                temp.add("avoid food with high saturated fat such as:");
-                temp.add("1. animal fat     : cow's fat, goat's fat, cheese, butter");
-                temp.add("2. vegetable fat  : coconut oil, margarine, chocolate");
-                temp.add("3. high fat snack : cake, blackforrest, tart");
-                temp.add("Reccomended to consume fresh fruit for meal variation, especially fruit with high fiber: apple, papaya, orange");
-                temp.add("For food processing, avoid high oil use");
+                temp.add("Hipercholesterol");
+                temp.add("Avoid food with high saturated fat such as " +
+                "animal fat (cow's fat, goat's fat, cheese, butter), " +
+                "vegetable fat (coconut oil, margarine, chocolate), " +
+                "high fat snack (cake, blackforrest, tart). " +
+                "Reccomended to consume fresh fruit for meal variation, especially fruit with high fiber: apple, papaya, orange. " +
+                "For food processing, avoid high oil use");
                 core.GetInstance().Tips.add(temp);
             }
             //add anak
@@ -278,14 +278,14 @@ public class Action {
             if(core.GetInstance().tekananDarah == BloodPressure.TINGGI) //tekanan darah tinggi
             {
                 ArrayList<String> temp = new ArrayList<String>();
-                temp.add("TIPS for Hipertension");
-                temp.add("Garam natrium terdapat secara alamiah dalam bahan makanan maupun ditambahkan dalam bahan masakan");
-                temp.add("Hindari semua bahan makanan yang diberi garam natrium pada pengolahannya dan yang diawetkan seperti:");
-                temp.add("1. roti, biskuit, cracker, semua yang dimasak dengan garam dapur");
-                temp.add("2. dendeng, abon, daging asap, ikan asin, pindang, udang kering, telur asin, telur pindang, sosis");
-                temp.add("3. keju, kacang tanah");
-                temp.add("4. margarine, mentega, asinan");
-                temp.add("Batasi konsumsi bahan makanan hewani, daging ayam atau sapi maksimal 100 gram per hari, telur 1 butir perhari");
+                temp.add("Hypertension");
+                temp.add("Garam natrium terdapat secara alamiah dalam bahan makanan maupun ditambahkan dalam bahan masakan. "  +
+                "Avoid any food that contains salt, such as " +
+                "bread, biscuit, crackers, " +
+                "jerked meat, abon, smoked beef, salted fish, dried shrimp, salted egg, sausage, " +
+                "keju, peanut, " +
+                "margarine, butter. " + 
+                "Limit the consumption of certain foods, meat at 100gr a day max, and 1 egg per day max.");
                 core.GetInstance().Tips.add(temp);
             }
             //add anak
@@ -297,13 +297,12 @@ public class Action {
             if(core.GetInstance().isAsamUratNormal == false) //asam urat tinggi
             {
                 ArrayList<String> temp = new ArrayList<String>();
-                temp.add("TIPS untuk penderita asam urat");
-                temp.add("Hindari semua makanan jeroan, jenis kerang-kerangan, upang, bekicot, kepiting, udang, cumi, makanan berkaldu, makanan dengan bahan pengembang, makanan kalengan");
-                temp.add("Lakukanlah olahraga teratur sesuai kemampuan");
-                temp.add("Ketika memasak makanan, minyak jangan dibiarkan terlalu panas, dan jangan digunakan berulang kali");
-                temp.add("Batasi penggunaan minyak goreng, gunakan secukupnya untuk menumis bumbu");
-                temp.add("Gunakan minyak jagung");
-                temp.add("Perbanyak konsumsi air putih (min 8-10 gelas perhari)");
+                temp.add("Hyperuricemia");
+                temp.add(
+                		"Avoid innards, clams, escargots, crabs, shrimps, squids. " +
+                		"Oil that is used to cook shouldn't be too hot or used more than once. " + 
+                		"Do not use too much oil for your food, use corn's oil instead. " +
+                		"Consume 8-10 glasses of water a day.");
                 core.GetInstance().Tips.add(temp);
             }
             //add anak
@@ -317,11 +316,10 @@ public class Action {
                 //tips diet
                 core.GetInstance().isRendahSerat = false;
                 ArrayList<String> temp = new ArrayList<String>();
-                temp.add("TIPS rendah serat");
-                temp.add("Sajikan makanan dalam bentuk lunak, seperti bubur, nasi tim");
-                temp.add("Anjuran pengolahan makanan: tim, kukus, panggang. Hindari pengolahan goreng");
-                temp.add("Hindari sayuran yang bergas, yaitu: sayuran yang berasal dari daun-daunan misal kubis, daun singkong");
-                temp.add("Konsumsi sayuran yang berasal dari buah seperti labu siam, mentimun, wortel, labu panjang");
+                temp.add("Low fiber:");
+                temp.add("Serve soft foods such as porridge. " + 
+		                "Avoid fried food. " + 
+		                "Avoid vegetables that comes from leaf, such as cabbages. ");
                 core.GetInstance().Tips.add(temp);
             }
             //add anak

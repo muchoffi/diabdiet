@@ -123,9 +123,97 @@ public class core{
             }
             //tulis semua alasannya berdasarkan data working memory
             //mulai tulis alasan==========================================
-            
-            Alasan.add("");
-            
+            String tempS;
+            boolean tempB;
+
+            //bagian cowok cewek
+            if(P.anthropometry.isGenderMale == true) // cowok
+            {
+                Alasan.add("You are male");
+            }
+            else
+            {
+                tempS = "You are female";
+                if(P.anthropometry.status != Status.NORMAL)
+                    tempS = tempS +" and you are " +P.anthropometry.status;
+                Alasan.add(tempS);
+            }
+
+            //bagian massa tubuh
+            tempS = "Your body mass: "+RBW;
+            if(P.anthropometry.status == Status.NORMAL)
+            {
+                tempS = tempS + " and considered as ";
+                if(ukuranBadan == BodySize.GEMUK)
+                    tempS = tempS + "fat";
+                else if(ukuranBadan == BodySize.NORMAL)
+                    tempS = tempS + "normal";
+                else if(ukuranBadan == BodySize.KURUS)
+                    tempS = tempS + "thin";
+                else
+                    tempS = tempS + "obesity";
+            }
+            Alasan.add(tempS);
+
+            //bagian asam urat
+            if(isAsamUratNormal == true)
+            {
+                tempS = "You have abnormal uric acid, the normal value is ";
+                if(P.anthropometry.isGenderMale == true) //cowok
+                    tempS="3.5 - 7.0";
+                else //cewek
+                    tempS ="2.8 - 6.8";
+                Alasan.add(tempS);
+            }
+
+            //bagian kolesterol
+            tempB = isCholesterolNormal && isHDLNormal && isLDLNormal && isTriNormal;
+            if(tempB == false) //abnormal
+            {
+                Alasan.add("You suffer hipercholesterol");
+                if(isCholesterolNormal == false) //yang salah di colesterol
+                    Alasan.add("The normal cholesterol value is 120 - 200");
+                if(isHDLNormal == false)
+                    Alasan.add("The normal HDL value is 35 - 55");
+                if(isLDLNormal == false)
+                    Alasan.add("The normal LDL value is 60 - 185");
+                if(isTriNormal == false)
+                    Alasan.add("The normal triglyceride value is 40 - 150");
+            }
+
+            //bagian hipertensi
+            if(tekananDarah == BloodPressure.NORMAL)
+            {
+                Alasan.add("You have normal blood pressure");
+            }
+            else if(tekananDarah == BloodPressure.RENDAH)
+            {
+                Alasan.add("You suffer hipotension");
+            }
+            else
+            {
+                Alasan.add("You suffer hipertension");
+            }
+
+            //bagian rendah serat
+            if(isRendahSerat == true)
+            {
+                Alasan.add("You have a digestive problem");
+            }
+
+            //bagian diet
+            if(isDietB == true)
+            {
+                Alasan.add("You have been suggested a B type diet plan");
+                Alasan.add("That's because you need normal plan for your diet");
+                Alasan.add("B type is for someone that need normal protein");
+            }
+            else
+            {
+                Alasan.add("You have been suggested a B1 type diet plan");
+                Alasan.add("That's because you need special plan for your diet");
+                Alasan.add("B1 type is for someone that need more proteins");
+            }
             //=============================================================
 
             Result temp = new Result();

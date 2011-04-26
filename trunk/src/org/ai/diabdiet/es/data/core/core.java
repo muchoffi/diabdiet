@@ -122,7 +122,11 @@ public class core{
                 listP.remove(0);
             }
             //tulis semua alasannya berdasarkan data working memory
+            //mulai tulis alasan==========================================
+            
             Alasan.add("");
+            
+            //=============================================================
 
             Result temp = new Result();
             temp.Alasan = Alasan;

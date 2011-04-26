@@ -6,13 +6,14 @@
 package org.ai.diabdiet.es.data.daftarmenu;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Erdiansyah
  */
 public class ListMenu {
-    private ArrayList<Menu> listmenu = new ArrayList<Menu>();
+    private List<Menu> listmenu = new ArrayList<Menu>();
 
 
     public ListMenu() {
@@ -22,7 +23,7 @@ public class ListMenu {
         this.listmenu = listmenu;
     }
 
-    public ArrayList<Menu> getListmenu() {
+    public List<Menu> getListmenu() {
         return listmenu;
     }
     

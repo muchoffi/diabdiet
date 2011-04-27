@@ -493,9 +493,10 @@ public class Action {
             ssm = core.GetInstance().menuHasilInferensi.getSususkim().getThird();
 
             //cek asam urat tinggi dan tp+ts+tm > 100
+            Knowledge.S_Komplikasi.get(1).GetMaxTempe();
             if(!core.GetInstance().isAsamUratNormal)
             {
-                if(tp+ts+tm > 100)
+                if(tp+ts+tm > Knowledge.S_Komplikasi.get(1).GetMaxTempe())
                 {
                     float sulih = (tp+ts+tm) - 50;
                     float protein = ((sulih * 6 / 50) / 7) * 20;
@@ -524,7 +525,7 @@ public class Action {
             //cek asam urat tinggi dan jumlah dp,ds,dm > 50
             if(!core.GetInstance().isAsamUratNormal)
             {
-                if(dp+ds+dm > 50)
+                if(dp+ds+dm > Knowledge.S_Komplikasi.get(1).GetMaxDaging())
                 {
                     float sulih = (dp+ds+dm) - 50;
                     float protein = ((sulih * 10 / 50) / 7) * 20;
@@ -553,7 +554,7 @@ public class Action {
             //cek tekanan darah tinggi dan dp,ds,dm > 100
             if(core.GetInstance().tekananDarah == BloodPressure.TINGGI)
             {
-                if(dp+ds+dm > 100)
+                if(dp+ds+dm > Knowledge.S_Komplikasi.get(0).GetMaxDaging())
                 {
                     float sulih = (dp+ds+dm) - 100;
                     float protein = ((sulih * 10 / 50) / 7) * 20;

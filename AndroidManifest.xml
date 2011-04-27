@@ -4,7 +4,7 @@
       android:versionCode="1"
       android:versionName="1.0">
     <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
-<activity android:label="Edit Diet Menu" android:name="org.ai.diabdiet.mobile.EditDietMenu">
+        <activity android:label="@string/app_name" android:name="org.ai.diabdiet.mobile.DiabDiet">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -15,6 +15,7 @@
 <activity android:label="Diet Plan" android:name="org.ai.diabdiet.mobile.SolveProblem"></activity>
 <activity android:label="Edit Knowledge" android:name="org.ai.diabdiet.mobile.EditKnowledge"></activity>
 <activity android:label="Diet Menu List" android:name="org.ai.diabdiet.mobile.DietMenuList"></activity>
+<activity android:label="Edit Diet Menu" android:name="org.ai.diabdiet.mobile.EditDietMenu"></activity>
 </application>
     <uses-sdk android:minSdkVersion="4" />
 

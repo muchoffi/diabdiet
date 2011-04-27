@@ -13,6 +13,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ListActivity;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.KeyEvent;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -34,20 +35,6 @@ public class DietMenuList extends ListActivity {
 	protected void onCreate(android.os.Bundle savedInstanceState) {		
 		super.onCreate(savedInstanceState);
 		
-		//Load list menu
-		InputStream is = null;
-		try {
-			is = openFileInput(Utils.MENU);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-			try {
-				is = getAssets().open(Utils.MENU);
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-		}
-		_lm = FileOperation.OpenFileListMenu(is);
-		
 		//Long clicked adapter
 		OnItemLongClickListener lc = new OnItemLongClickListener() {
 			@Override
@@ -59,7 +46,7 @@ public class DietMenuList extends ListActivity {
 		getListView().setOnItemLongClickListener(lc);
 
 		//Setup views
-		updateViews();
+		onRestart();
 	}
 	
 	@Override
@@ -81,6 +68,9 @@ public class DietMenuList extends ListActivity {
 		           public void onClick(DialogInterface dialog, int id) {
 		               //Delete the item
 		        	   delete(_lastSelectedPosition);
+		        	   
+		        	   //Save it
+		        	   saveChanges();
 		        	   
 		        	   //Update views
 		        	   updateViews();
@@ -139,6 +129,11 @@ public class DietMenuList extends ListActivity {
 			saveChanges();
 			
 			break;
+		case R.id.dietlist_menu_new:
+			//new menu
+			editItem(-1);
+			
+			break;
 		}
 		return true;
 	}
@@ -166,7 +161,8 @@ public class DietMenuList extends ListActivity {
 	
 	protected void onBackPressed() {
 		//Open dialogbox containing "Save & Quit" and "Quit"
-		showDialog(DIALOG_EXIT);
+		//showDialog(DIALOG_EXIT);
+		this.finish();
 	}
 	
 	private void updateViews() {
@@ -207,6 +203,30 @@ public class DietMenuList extends ListActivity {
 	}
 	
 	private void editItem(int position) {
+		Intent i = new Intent(DietMenuList.this, EditDietMenu.class);
+		if(position >= 0) i.putExtra("data", position);
+		startActivity(i);
+	}
+	
+	@Override
+	protected void onRestart() {
+		super.onRestart();
 		
+		//Load list menu
+		InputStream is = null;
+		try {
+			is = openFileInput(Utils.MENU);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			try {
+				is = getAssets().open(Utils.MENU);
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		}
+		_lm = FileOperation.OpenFileListMenu(is);
+		
+		//Update views
+		updateViews();
 	}
 }

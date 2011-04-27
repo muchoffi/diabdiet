@@ -314,7 +314,7 @@ public class Action {
             if(P.clinicalAnamnesa.swallowProb && P.clinicalAnamnesa.digestionProb && (P.laboratory.temperature > 37 || P.clinicalAnamnesa.wound)) //harus rendah serat
             {
                 //tips diet
-                core.GetInstance().isRendahSerat = false;
+                core.GetInstance().isRendahSerat = true;
                 ArrayList<String> temp = new ArrayList<String>();
                 temp.add("Low fiber:");
                 temp.add("Serve soft foods such as porridge. " + 

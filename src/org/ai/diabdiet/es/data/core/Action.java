@@ -279,11 +279,11 @@ public class Action {
             {
                 ArrayList<String> temp = new ArrayList<String>();
                 temp.add("Hypertension");
-                temp.add("Garam natrium terdapat secara alamiah dalam bahan makanan maupun ditambahkan dalam bahan masakan. "  +
+                temp.add(""  +
                 "Avoid any food that contains salt, such as " +
                 "bread, biscuit, crackers, " +
                 "jerked meat, abon, smoked beef, salted fish, dried shrimp, salted egg, sausage, " +
-                "keju, peanut, " +
+                "cheese, peanut, " +
                 "margarine, butter. " + 
                 "Limit the consumption of certain foods, meat at 100gr a day max, and 1 egg per day max.");
                 core.GetInstance().Tips.add(temp);

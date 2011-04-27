@@ -1,11 +1,11 @@
 # status
-+ skinny 0.0 1.3
-+ normal 1.3 3.7	
-+ fat 3.7 6.1	
-+ overweight 6.1 9.9
++ skinny 0.0 0.9
++ normal 0.9 1.1	
++ fat 1.1 1.2	
++ overweight 1.2 9.9
 # kehamilan
-+ pregnant 300
-+ breastfeed 400
++ pregnant 350
++ breastfeed 700
 # komplikasi
-+ hypertension 300 400
-+ hyperuricemia 312 225
++ hypertension 100 100
++ hyperuricemia 50 100

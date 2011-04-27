@@ -95,12 +95,15 @@ public class SolveProblem extends Activity {
         
         //Display tips
         l = (LinearLayout)findViewById(R.id.solved_tips_container);
-        for(List<String> ls : res.Tips) {
-        	String title = ls.get(0);
-        	for(int i = 1; i < ls.size(); ++i) {
-            	l.addView(new ListItem(this, title + ": " + ls.get(i)));
-            	Log.i("aa", ls.get(i));
-        	}
+        if(res.Tips.size() > 0) {
+	        for(List<String> ls : res.Tips) {
+	        	String title = ls.get(0);
+	        	for(int i = 1; i < ls.size(); ++i) {
+	            	l.addView(new ListItem(this, title + ": " + ls.get(i)));
+	        	}
+	        }
+        } else {
+        	l.addView(new ListItem(this, "No tips to display."));
         }
 	}
 	
@@ -111,8 +114,6 @@ public class SolveProblem extends Activity {
 		LayoutParams lp = new LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
 		lp.leftMargin = 5;
 		lp.rightMargin = 5;
-		
-		Log.i("getUiRow()", type);
 		
 		//Table row
 		tr.setLayoutParams(lp);

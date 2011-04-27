@@ -10,17 +10,17 @@ package org.ai.diabdiet.es.data.daftarmenu;
  */
 public class Menu {
 
-    private int kalori;
-    private String tipediet;
-    private DetailMenu nasi;
-    private DetailMenu daging;
-    private DetailMenu tempe;
-    private DetailMenu sayuranA;
-    private DetailMenu sayuranB;
-    private DetailMenu minyak;
-    private DetailMenu pisang;
-    private DetailMenu pepaya;
-    private DetailMenu sususkim;
+    public float kalori;
+    public String tipediet;
+    public DetailMenu nasi;
+    public DetailMenu daging;
+    public DetailMenu tempe;
+    public DetailMenu sayuranA;
+    public DetailMenu sayuranB;
+    public DetailMenu minyak;
+    public DetailMenu pisang;
+    public DetailMenu pepaya;
+    public DetailMenu sususkim;
 
     public Menu() {
     }
@@ -71,7 +71,7 @@ public class Menu {
         return daging;
     }
 
-    public int getKalori() {
+    public float getKalori() {
         return kalori;
     }
 
@@ -168,6 +168,19 @@ public class Menu {
 
         return sb.toString();
     }
-
     
+    public float getTotalCalories() {
+    	float total = 0;
+        if(nasi!=null) total += nasi.getTotalCalories();
+        if(daging!=null)total += daging.getTotalCalories();
+        if(tempe!=null)total += tempe.getTotalCalories();
+        if(sayuranA!=null)total += sayuranA.getTotalCalories();
+        if(sayuranB!=null)total += sayuranB.getTotalCalories();
+        if(minyak!=null)total += minyak.getTotalCalories();
+        if(pisang!=null)total += pisang.getTotalCalories();
+        if(pepaya!=null)total += pepaya.getTotalCalories();
+        if(sususkim!=null)total += sususkim.getTotalCalories();
+        
+        return total;
+    }
 }

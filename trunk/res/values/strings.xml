@@ -66,12 +66,34 @@
     
     <string name="solved_header">Here is the best diet plan for you!</string>
     <string name="solved_type">Type</string>
-    <string name="solved_time_7">07.00 (gr)</string>
+    <string name="solved_time_7">06.00 (gr)</string>
     <string name="solved_time_12">12.00 (gr)</string>
     <string name="solved_time_6">18.00 (gr)</string>
     <string name="solved_explanation_header">Explanations</string>
     <string name="solved_tips_header">Tips</string>
     
+    <string name="dietlist_menu_new">Add new menu</string>
     <string name="dietlist_menu_savechanges">Save changes</string>
     <string name="dietlist_menu_loadfromserver">Load from server</string>
+    
+    <string name="editdietmenu_header">Edit diet menu here</string>
+    <string name="edit_kaloritext">Calories</string>
+    <string name="edit_kalori_i">cal</string>
+    <string name="edit_jenisdiettext">Diet type</string>    
+    <string name="edit_jenisdiet_b">B</string>    
+    <string name="edit_jenisdiet_b1">B1</string>
+    <string name="edit_tipe">Type</string>
+    <string name="edit_pagi">06.00 (gr)</string>
+    <string name="edit_siang">12.00 (gr)</string>
+    <string name="edit_malam">18.00 (gr)</string>
+    <string name="edit_daging">Meat</string>
+    <string name="edit_tempe">Tempe</string>
+    <string name="edit_sayuranb">Vegs A</string>
+    <string name="edit_sayurana">Vegs B</string>
+    <string name="edit_minyak">Oil</string>
+    <string name="edit_pisang">Banana</string>
+    <string name="edit_pepaya">Papaya</string>
+    <string name="edit_sususkim">Milk</string>
+    <string name="edit_nasi">Rice</string>
+    <string name="edit_save">Save</string>
 </resources>

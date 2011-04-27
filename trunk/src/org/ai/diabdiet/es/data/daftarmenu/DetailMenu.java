@@ -46,4 +46,8 @@ public class DetailMenu {
     public void setThird(float third) {
         this.third = third;
     }
+    
+    public float getTotalCalories() {
+    	return first + second + third;
+    }
 }

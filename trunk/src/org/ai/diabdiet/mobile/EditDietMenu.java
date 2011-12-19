@@ -92,7 +92,7 @@ public class EditDietMenu extends Activity {
 		m = getDetail(R.id.edit_tempepagi, R.id.edit_tempesiang, R.id.edit_tempemalam);
 		_dietMenu.tempe = m;
 		
-		_dietMenu.kalori = (_dietMenu.getTotalCalories());
+		_dietMenu.kalori = Float.parseFloat(((EditText)findViewById(R.id.edit_kalori)).getText().toString());
 		if((((RadioButton)findViewById(R.id.edit_jenisdiet_b)).isChecked())) _dietMenu.tipediet = "B";
 		else _dietMenu.tipediet = "B1";
 

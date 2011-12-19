@@ -183,13 +183,13 @@ public class EditKnowledge extends Activity {
 			_meat = new EditText(ctx);
 			_meat.setLayoutParams(lp);
 			_meat.setText("" + sk.GetMaxDaging());
-			_meat.setInputType(InputType.TYPE_CLASS_NUMBER);
+			_meat.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL | InputType.TYPE_CLASS_NUMBER);
 			this.addView(_meat);
 			
 			_tempe = new EditText(ctx);
 			_tempe.setLayoutParams(lp);
 			_tempe.setText("" + sk.GetMaxTempe());
-			_tempe.setInputType(InputType.TYPE_CLASS_NUMBER);
+			_tempe.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL | InputType.TYPE_CLASS_NUMBER);
 			this.addView(_tempe);
 		}
 		
@@ -218,13 +218,13 @@ public class EditKnowledge extends Activity {
 			_min = new EditText(ctx);
 			_min.setLayoutParams(lp);
 			_min.setText("" + sg.GetMinGizi());
-			_min.setInputType(InputType.TYPE_CLASS_NUMBER);
+			_min.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL | InputType.TYPE_CLASS_NUMBER);
 			this.addView(_min);
 			
 			_max = new EditText(ctx);
 			_max.setLayoutParams(lp);
 			_max.setText("" + sg.GetMaxGizi());
-			_max.setInputType(InputType.TYPE_CLASS_NUMBER);
+			_max.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL | InputType.TYPE_CLASS_NUMBER);
 			this.addView(_max);
 		}
 		
@@ -253,7 +253,7 @@ public class EditKnowledge extends Activity {
 			_calories = new EditText(ctx);
 			_calories.setLayoutParams(lp);
 			_calories.setText("" + sg.GetNeedKalor());
-			_calories.setInputType(InputType.TYPE_CLASS_NUMBER);
+			_calories.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL  | InputType.TYPE_CLASS_NUMBER);
 			this.addView(_calories);
 		}
 		

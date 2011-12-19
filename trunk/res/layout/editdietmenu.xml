@@ -43,7 +43,7 @@
 
        		<TableRow android:background="#228b22">
 		      	<TextView android:text="@string/edit_kaloritext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dip"/>
-	       		<EditText android:enabled="false" android:id="@+id/edit_kalori" android:layout_width="fill_parent" android:layout_height="wrap_content" android:width="100dip" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer"/>
+	       		<EditText android:id="@+id/edit_kalori" android:layout_width="fill_parent" android:layout_height="wrap_content" android:width="100dip" android:layout_marginLeft="20px" android:layout_marginRight="20px" android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal"/>
 	       		<TextView android:text="@string/edit_kalori_i" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
        		</TableRow>
        		<TableRow android:background="#006400">
@@ -67,111 +67,111 @@
        		<TableRow android:layout_marginTop="3dip" android:layout_marginBottom="3dip">
        			<TextView android:text="@string/edit_daging" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="5dip" android:paddingRight="5dip" android:background="#cc1837" android:paddingTop="12dip" android:paddingBottom="14dip" />
        			<LinearLayout android:background="#0618c2">
-       				<EditText android:id="@+id/edit_dagingpagi" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_dagingpagi" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		<LinearLayout android:background="#071ce3">
-       				<EditText android:id="@+id/edit_dagingsiang" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_dagingsiang" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		<LinearLayout android:background="#0618c2">
-       				<EditText android:id="@+id/edit_dagingmalam" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_dagingmalam" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		
 	       </TableRow>
 	      		<TableRow android:layout_marginTop="3dip" android:layout_marginBottom="3dip">
        			<TextView android:text="@string/edit_tempe" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="5dip" android:background="#cc1837" android:paddingTop="12dip" android:paddingBottom="14dip" />
        			<LinearLayout android:background="#0618c2">
-       				<EditText android:id="@+id/edit_tempepagi" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_tempepagi" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		<LinearLayout android:background="#071ce3">
-       				<EditText android:id="@+id/edit_tempesiang" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_tempesiang" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		<LinearLayout android:background="#0618c2">
-       				<EditText android:id="@+id/edit_tempemalam" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_tempemalam" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		
 	       </TableRow>
 	      		<TableRow android:layout_marginTop="3dip" android:layout_marginBottom="3dip">
        			<TextView android:text="@string/edit_nasi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="5dip" android:background="#cc1837" android:paddingTop="12dip" android:paddingBottom="14dip" />
        			<LinearLayout android:background="#0618c2">
-       				<EditText android:id="@+id/edit_nasipagi" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_nasipagi" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		<LinearLayout android:background="#071ce3">
-       				<EditText android:id="@+id/edit_nasisiang" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_nasisiang" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		<LinearLayout android:background="#0618c2">
-       				<EditText android:id="@+id/edit_nasimalam" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_nasimalam" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		
 	       </TableRow>	<TableRow android:layout_marginTop="3dip" android:layout_marginBottom="3dip">
        			<TextView android:text="@string/edit_sayurana" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="5dip" android:background="#cc1837" android:paddingTop="12dip" android:paddingBottom="14dip" />
        			<LinearLayout android:background="#0618c2">
-       				<EditText android:id="@+id/edit_sayuranapagi" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_sayuranapagi" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		<LinearLayout android:background="#071ce3">
-       				<EditText android:id="@+id/edit_sayuranasiang" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_sayuranasiang" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		<LinearLayout android:background="#0618c2">
-       				<EditText android:id="@+id/edit_sayuranamalam" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_sayuranamalam" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		
 	       </TableRow>	<TableRow android:layout_marginTop="3dip" android:layout_marginBottom="3dip">
        			<TextView android:text="@string/edit_sayuranb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="5dip" android:background="#cc1837" android:paddingTop="12dip" android:paddingBottom="14dip" />
        			<LinearLayout android:background="#0618c2">
-       				<EditText android:id="@+id/edit_sayuranbpagi" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_sayuranbpagi" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		<LinearLayout android:background="#071ce3">
-       				<EditText android:id="@+id/edit_sayuranbsiang" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_sayuranbsiang" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		<LinearLayout android:background="#0618c2">
-       				<EditText android:id="@+id/edit_sayuranbmalam" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_sayuranbmalam" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		
 	       </TableRow>	<TableRow android:layout_marginTop="3dip" android:layout_marginBottom="3dip">
        			<TextView android:text="@string/edit_minyak" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="5dip" android:background="#cc1837" android:paddingTop="12dip" android:paddingBottom="14dip" />
        			<LinearLayout android:background="#0618c2">
-       				<EditText android:id="@+id/edit_minyakpagi" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_minyakpagi" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		<LinearLayout android:background="#071ce3">
-       				<EditText android:id="@+id/edit_minyaksiang" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_minyaksiang" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		<LinearLayout android:background="#0618c2">
-       				<EditText android:id="@+id/edit_minyakmalam" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_minyakmalam" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		
 	       </TableRow>	<TableRow android:layout_marginTop="3dip" android:layout_marginBottom="3dip">
        			<TextView android:text="@string/edit_pisang" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="5dip" android:background="#cc1837" android:paddingTop="12dip" android:paddingBottom="14dip" />
        			<LinearLayout android:background="#0618c2">
-       				<EditText android:id="@+id/edit_pisangpagi" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_pisangpagi" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		<LinearLayout android:background="#071ce3">
-       				<EditText android:id="@+id/edit_pisangsiang" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_pisangsiang" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		<LinearLayout android:background="#0618c2">
-       				<EditText android:id="@+id/edit_pisangmalam" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_pisangmalam" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		
 	       </TableRow>	<TableRow android:layout_marginTop="3dip" android:layout_marginBottom="3dip">
        			<TextView android:text="@string/edit_pepaya" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="5dip" android:background="#cc1837" android:paddingTop="12dip" android:paddingBottom="14dip" />
        			<LinearLayout android:background="#0618c2">
-       				<EditText android:id="@+id/edit_pepayapagi" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_pepayapagi" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		<LinearLayout android:background="#071ce3">
-       				<EditText android:id="@+id/edit_pepayasiang" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_pepayasiang" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		<LinearLayout android:background="#0618c2">
-       				<EditText android:id="@+id/edit_pepayamalam" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_pepayamalam" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		
 	       </TableRow>	<TableRow android:layout_marginTop="3dip" android:layout_marginBottom="3dip">
        			<TextView android:text="@string/edit_sususkim" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="5dip" android:background="#cc1837" android:paddingTop="12dip" android:paddingBottom="14dip" />
        			<LinearLayout android:background="#0618c2">
-       				<EditText android:id="@+id/edit_sususkimpagi" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_sususkimpagi" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		<LinearLayout android:background="#071ce3">
-       				<EditText android:id="@+id/edit_sususkimsiang" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_sususkimsiang" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		<LinearLayout android:background="#0618c2">
-       				<EditText android:id="@+id/edit_sususkimmalam" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="number" android:numeric="integer" />
+       				<EditText android:id="@+id/edit_sususkimmalam" android:layout_width="fill_parent" android:layout_height="43dip" android:width="40dip"  android:layout_marginTop="3dip" android:inputType="numberDecimal" android:numeric="decimal" />
        			</LinearLayout>
 	       		
 	       </TableRow>		

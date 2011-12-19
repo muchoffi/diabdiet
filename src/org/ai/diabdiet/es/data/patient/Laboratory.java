@@ -1,7 +1,5 @@
 package org.ai.diabdiet.es.data.patient;
 
-import java.util.List;
-
 public class Laboratory {
 	/* all public because this is logically a struct */
 	public float temperature	= 35;

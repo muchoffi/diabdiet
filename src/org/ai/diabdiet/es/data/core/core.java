@@ -156,7 +156,7 @@ public class core{
             }
 
             //bagian asam urat
-            if(isAsamUratNormal == true)
+            if(isAsamUratNormal == false)
             {
                 tempS = "You have abnormal uric acid, the normal value is ";
                 if(P.anthropometry.isGenderMale == true) //cowok
@@ -225,45 +225,4 @@ public class core{
             return temp;
         }
 	//============================================================================
-	
-	public static void main(String[] args) throws FileNotFoundException//ini buat mainnya doank
-	{
-		System.out.println("Robert Ganteng");
-                Patient P = new Patient();
-
-                File fileListMenu = new File("menudasar.txt");
-		InputStream inMenu = (new FileInputStream(fileListMenu));
-
-                //baca plan
-		File fileTreePlan = new File("plan.txt");
-		InputStream inTree = new FileInputStream(fileTreePlan); //dapet masukan tree plan
-
-                //baca plan
-		File fileKnow = new File("knowledge.txt");
-		InputStream inKnow = new FileInputStream(fileKnow); //dapet masukan tree plan
-
-                //P.anthropometry.status = Status.PREGNANT;
-                core.GetInstance().init(inMenu, inTree, inKnow);
-                //System.out.println(core.GetInstance().listMenu.getListmenu().get(0).getDaging().getFirst());
-                //System.out.println(core.GetInstance().listMenu.getListmenu().get(0).getDaging().getSecond());
-                //P.anthropometry.bodyWeight = 999;
-                //P.anthropometry.status = Status.PREGNANT;
-                core.GetInstance().solve(P);
-                //System.out.println("As urat: "+core.GetInstance().isAsamUratNormal);
-                //System.out.println("As urat: "+core.GetInstance().tekananDarah);
-                //System.out.println("kalori "+core.GetInstance().menuHasilInferensi.getKalori());
-                //System.out.println("tipe diet "+core.GetInstance().menuHasilInferensi.getTipediet());
-                //System.out.println("daging: "+ core.GetInstance().menuHasilInferensi.getDaging().getFirst());
-                //System.out.println("daging: "+ core.GetInstance().menuHasilInferensi.getDaging().getSecond());
-                //System.out.println("daging: "+ core.GetInstance().menuHasilInferensi.getDaging().getThird());
-                //System.out.println(core.GetInstance().listMenu.getListmenu().get(0).getDaging().getFirst());
-                //System.out.println(core.GetInstance().listMenu.getListmenu().get(0).getDaging().getSecond());
-                //System.out.println(core.GetInstance().kaloriTotalNormal);
-                System.out.println(P.anthropometry.bodyHeight);
-                System.out.println(P.anthropometry.bodyWeight);
-                for(int j =0;j<core.GetInstance().Alasan.size();j++)
-                {
-                    System.out.println(core.GetInstance().Alasan.get(j));
-                }
-        }
 }
